@@ -4,7 +4,7 @@
 
 ## 项目简介
 
-本 Skill 基于 MiniMax H3 官方 CLI 项目的 Prompt Construction 指南构建，旨在帮助用户快速生成符合 H3 视频生成模型规范的结构化故事板提示词。
+本 Skill 基于 [MiniMax H3 官方 CLI 项目](https://github.com/MiniMax-AI/cli/)的 Prompt Construction 指南构建，旨在帮助用户快速生成符合 H3 视频生成模型规范的结构化故事板提示词。
 
 ### 核心能力
 
