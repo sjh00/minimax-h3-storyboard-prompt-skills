@@ -1,123 +1,93 @@
-# MiniMax-H3 Storyboard Prompt Generator Skill
+# MiniMax H3 分镜提示词技能集
 
-根据用户描述，生成符合 MiniMax-H3 官方规范的结构化故事板提示词（中文）。
+**落脚点：提示词编写。**  
+中文说明 + 可直接投喂 [MiniMax H3](https://github.com/MiniMax-AI/MiniMax-H3) 的分镜/结构化 prompt，不绑平台工具，不做后期流水线编排。
 
-## 项目简介
+仓库名即定位：`minimax-h3-storyboard-prompt-skills`  
+上游题材参考：[官方 skills](https://github.com/MiniMax-AI/MiniMax-H3/tree/main/skills)（本仓全部中文化，并压成「写法」而非「成片工程」）。
 
-本 Skill 基于 [MiniMax H3 官方 CLI 项目](https://github.com/MiniMax-AI/cli/)的 Prompt Construction 指南构建，旨在帮助用户快速生成符合 H3 视频生成模型规范的结构化故事板提示词。
+---
 
-### 核心能力
+## 怎么用这套技能
 
-- **自动补全**：当用户输入不足时，按官方 8 步扩展顺序自动补全提示词要素
-- **两级时间轴规划**：全局时间轴 + 镜头内微时间轴，确保动作连续、物理合理
-- **连续性校验**：自动维护状态边界账本，确保镜头间人物、道具、连接的硬继承
-- **多模式支持**：覆盖 H3-Base-FL2VA（首尾帧模式）和 H3-Base-Ref2VA（全参考模式）
-- **结构化输出**：输出官方规范的中文故事板模板，可直接用于 H3 视频生成
+| 层级 | 技能 | 何时用 |
+|---|---|---|
+| **底座** | `h3-prompt-writing` | 任意 H3 模式：T2VA / I2VA / FL2VA / L2VA / Ref2VA；字段规范、标签、两级时间轴 |
+| **场景写法** | 其余 8 个 | 某一视觉题材下，如何写风格锁、节拍与终稿 prompt |
 
-### 适用场景
+**交付物统一为：**
 
-- 使用 MiniMax H3 生成 4-15 秒视频
-- 需要多张参考图/视频的连续分镜生成
-- 涉及手部交接、道具传递等精确物理动作
-- 需要保持人物、服装、空间位置跨镜头一致
+1. （可选）中文分镜 / 节拍草稿  
+2. **H3 终稿提示词**（可复制生成）  
+3. 自检清单  
+
+不问：画布、剪辑工程、外部配乐工具、其他视频模型切换。
+
+**H3 硬规格（各 skill 共用）**  
+单段 4–15s · 画幅 21:9 / 16:9 / 4:3 / 1:1 / 3:4 / 9:16 · 默认可写原生音频意图 · 更长内容拆多段 prompt + 衔接句。
+
+---
 
 ## 安装
 
-### 前置要求
-
-- Node.js 18 或更高版本
-- 支持 Skills 的 AI Agent（如 Claude Code、Cursor、Codex 等）
-
-### 通过 npx skills 安装（推荐）
-
-Skills CLI 是开放 Agent Skills 生态的包管理工具，无需全局安装，直接通过 `npx` 运行即可。
-
-**安装本 Skill：**
-
 ```bash
-npx skills add sjh00/MiniMax-H3-Storyboard-Prompt-Generator-Skill
+npx skills add https://github.com/sjh00/minimax-h3-storyboard-prompt-skills --list
+npx skills add https://github.com/sjh00/minimax-h3-storyboard-prompt-skills --skill '*'
+npx skills add https://github.com/sjh00/minimax-h3-storyboard-prompt-skills --skill h3-prompt-writing
 ```
 
-**安装后验证：**
+---
 
-```bash
-npx skills list
-```
+## 技能一览
 
-### 通过 GitHub 直接安装
+### 底座
 
-```bash
-# 克隆仓库
-git clone https://github.com/sjh00/MiniMax-H3-Storyboard-Prompt-Generator-Skill.git
+| 目录 | 写什么 |
+|---|---|
+| [`h3-prompt-writing`](h3-prompt-writing/) | 五模式结构、运镜/对白规范、全参考标签、中文两级时间轴分镜 → 终稿字段 |
 
-# 将 SKILL.md 放入你的 Agent Skills 目录
-# 例如 Claude Code: ~/.claude/skills/
-# 例如 Cursor: ~/.cursor/skills/
-```
+### 场景提示词（题材写法）
 
-### 更新 Skill
-
-```bash
-npx skills update
-```
-
-## 使用方法
-
-在支持 Skills 的 AI Agent 中，启用本 Skill 后，直接描述你的视频需求即可。
-
-### 示例对话
-
-**用户输入：**
-
-> 帮我生成一个 15 秒的视频提示词，用 6 张参考图，两个人交接一副耳机。
-
-**Skill 输出：**
-
-生成包含以下要素的完整故事板：
-- 输出规格（15秒、宽高比、用途）
-- 整体风格（媒介、视觉风格、场景、声音）
-- 人物与空间连续性（外观、位置、硬约束）
-- 道具状态连续性（数量、所有者、连接关系）
-- 两级时间轴（每个镜头的主时间轴 + 微时间轴）
-- 严格动作顺序（因果链完整）
-- 负面约束
-
-### 支持的输入模式
-
-| 模式 | 参考数量 | 输出结构 |
+| 目录 | 题材 | 终稿形态 |
 |---|---|---|
-| 文本到视频 | 0 张图 | 简洁段落 |
-| 首帧/尾帧模式 | 1-2 张图 | 段落式，含起始→演化→结束 |
-| 全参考模式 | ≥3 张图/视频 | 完整故事板块（每镜头一块） |
+| [`minimalist-product-ad-generator`](minimalist-product-ad-generator/) | 极简产品广告 | 锚定角色说明 + 节拍表 → 单段 H3 prompt |
+| [`brand-promo-video-generator`](brand-promo-video-generator/) | 品牌宣传 | 叙事脊柱 + 节拍 → 分段 H3 prompt |
+| [`3d-animation-short-generator`](3d-animation-short-generator/) | 风格化 3D 动画 | 镜头表/每秒指令 → 逐镜 H3 prompt |
+| [`papercraft-stop-motion-explainer`](papercraft-stop-motion-explainer/) | 纸艺定格科普 | 画风锁 + 分镜 → 图/视频 prompt |
+| [`paper-collage-explainer-generator`](paper-collage-explainer-generator/) | 半调纸拼贴 | 静帧规格 + 停格组装 prompt |
+| [`mv-subtitle-skill-confirmed`](mv-subtitle-skill-confirmed/) | 歌词空间贴字 MV | 多镜脚本（Vocal/Typography/Visual） |
+| [`co-op-game-intro-generator`](co-op-game-intro-generator/) | 双人游戏菜单开场 | 确认图 prompt + 15s 时间轴视频 prompt |
+| [`handdrawn-live-video-generator`](handdrawn-live-video-generator/) | 手绘×实拍 | 用户语言 15s 一体 prompt |
 
-### 输出模板示例
+风格 skill 写完终稿后，若需压成官方三字段/全参考六段，**接 `h3-prompt-writing`**。
+
+---
+
+## 中文习惯
+
+- 说明、分镜草稿、用户沟通：**中文**  
+- 官方字段名 / 标签 / 关系标记：**英文固定写法**（与 H3 一致）  
+- 终稿正文：默认英文更稳；对白/歌词/画面字保留原文；用户要求中文终稿时字段名不变  
+- 文风：短句、表格式、可执行，少空话  
+
+---
+
+## 目录
 
 ```text
-【输出规格】
-生成一段15秒、16:9的广告视频。使用6张分镜参考图...
-
-【整体风格】
-真人实拍，电影质感...
-
-【两级时间轴与参考图映射】
-镜头1｜0:00-2.5｜时长2.5秒｜对应第1张图
-...
+minimax-h3-storyboard-prompt-skills/
+├── README.md
+├── h3-prompt-writing/          # 底座
+├── minimalist-product-ad-generator/
+├── brand-promo-video-generator/
+├── 3d-animation-short-generator/
+├── papercraft-stop-motion-explainer/
+├── paper-collage-explainer-generator/
+├── mv-subtitle-skill-confirmed/
+├── co-op-game-intro-generator/
+└── handdrawn-live-video-generator/
 ```
 
-## 文件结构
+## 链接
 
-```
-MiniMax-H3-Storyboard-Prompt-Generator-Skill/
-├── SKILL.md          # Skill 主文件（含完整提示词构建指南）
-└── README.md         # 本文件
-```
-
-## 相关资源
-
-- [MiniMax H3 官方文档](https://www.minimaxi.com)
-- [Skills CLI GitHub](https://github.com/antfu/skills-cli)
-- [Skills 生态官网](https://skills.sh)
-
-## License
-
-MIT
+- [MiniMax H3](https://github.com/MiniMax-AI/MiniMax-H3) · [官方 Skills](https://github.com/MiniMax-AI/MiniMax-H3/tree/main/skills) · [H3 CLI](https://github.com/MiniMax-AI/cli/)

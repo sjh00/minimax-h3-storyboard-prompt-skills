@@ -1,0 +1,10 @@
+display-name-zh: 双人开场提示词
+version: 0.3.0
+tag-en: Prompt Writing
+tag-cn: 提示词
+summary-en: Still + 15s H3 prompts for co-op game intros.
+summary-cn: 双人游戏菜单确认图与 15s H3 视频提示词。
+desc-cn: 首图 prompt + 固定时间轴视频 prompt；写法中心。
+author-en: MiniMax H3 Chinese Skills
+author-cn: MiniMax H3 中文 Skills
+source: chinese-localization

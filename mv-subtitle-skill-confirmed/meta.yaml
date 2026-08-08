@@ -1,0 +1,10 @@
+display-name-zh: MV贴字提示词
+version: 0.8.0
+tag-en: Prompt Writing
+tag-cn: 提示词
+summary-en: Multi-shot H3 prompts for lyric typography MVs.
+summary-cn: 歌词空间贴字 MV 的多分镜 H3 提示词写法。
+desc-cn: Vocal/Typography/Visual 分镜脚本与衔接句；提示词交付。
+author-en: MiniMax H3 Chinese Skills
+author-cn: MiniMax H3 中文 Skills
+source: chinese-localization

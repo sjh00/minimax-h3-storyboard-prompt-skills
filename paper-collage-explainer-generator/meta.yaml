@@ -1,0 +1,10 @@
+display-name-zh: 纸拼贴提示词
+version: 0.5.0
+tag-en: Prompt Writing
+tag-cn: 提示词
+summary-en: H3 prompts for paper-collage explainers.
+summary-cn: 半调纸拼贴讲解的 H3 提示词写法。
+desc-cn: 静帧完成态 + 停格组装视频 prompt；默认拼贴 SFX。
+author-en: MiniMax H3 Chinese Skills
+author-cn: MiniMax H3 中文 Skills
+source: chinese-localization

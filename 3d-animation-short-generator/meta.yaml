@@ -1,0 +1,10 @@
+display-name-zh: 3D动画分镜提示词
+version: 0.7.0
+tag-en: Prompt Writing
+tag-cn: 提示词
+summary-en: Per-shot H3 prompts for stylized 3D shorts.
+summary-cn: 风格化 3D 短片的逐镜 H3 提示词写法。
+desc-cn: 镜头表、每秒指令与逐镜 MiniMax H3 终稿；提示词中心。
+author-en: MiniMax H3 Chinese Skills
+author-cn: MiniMax H3 中文 Skills
+source: chinese-localization
