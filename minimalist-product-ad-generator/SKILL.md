@@ -3,6 +3,9 @@ name: minimalist-product-ad-generator
 description: |
   极简/Apple 风产品广告的 H3 提示词写法：产品保真、英文画面文案、锚定构图角色、节拍表，输出可投喂 MiniMax H3 的终稿 prompt。
   适用电商/新品产品片提示词。不适用 KOC 口播脚本、后期剪辑说明。
+compatibility: |
+  可移植：聚焦 H3 提示词写法，任意能读本地 skill 文件的 Agent 可用。
+  不依赖 MiniMax Hub 画布、hub_* 工具或专有运行时（与官方 Hub 原生成片版不同）。
 ---
 
 # 极简产品广告 · 提示词写法

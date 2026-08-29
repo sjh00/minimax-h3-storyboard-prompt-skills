@@ -3,6 +3,9 @@ name: 3d-animation-short-generator
 description: |
   风格化 3D 动画短片的 H3 提示词写法：故事节拍、角色/场景锁、六列镜头表与每秒指令，输出逐镜可投喂 MiniMax H3 的 prompt。
   适用剧情动画分镜提示词。不适用单图修图或真人写实脚本。
+compatibility: |
+  可移植：聚焦 H3 提示词写法，任意能读本地 skill 文件的 Agent 可用。
+  不依赖 MiniMax Hub 画布、hub_* 工具或专有运行时（与官方 Hub 原生成片版不同）。
 ---
 
 # 3D 动画短片 · 提示词写法

@@ -3,6 +3,9 @@ name: paper-collage-explainer-generator
 description: |
   半调纸拼贴讲解的 H3 提示词写法：视觉隐喻、静帧完成态、停格组装运动与拼贴音效意图，输出静帧/视频 prompt。
   默认无 BGM/旁白/字幕。适用知识点/观点/B-roll 提示词。
+compatibility: |
+  可移植：聚焦 H3 提示词写法，任意能读本地 skill 文件的 Agent 可用。
+  不依赖 MiniMax Hub 画布、hub_* 工具或专有运行时（与官方 Hub 原生成片版不同）。
 ---
 
 # 纸拼贴讲解 · 提示词写法

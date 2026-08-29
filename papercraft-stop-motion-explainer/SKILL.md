@@ -3,6 +3,9 @@ name: papercraft-stop-motion-explainer
 description: |
   纸艺定格科普的 H3 提示词写法：学习目标、纸艺画风锁、分层布景与机关、分镜与图/视频 prompt 创作包。
   适用剪纸/立体书/微缩定格讲解提示词。不适用无纸艺质感的普通卡通脚本。
+compatibility: |
+  可移植：聚焦 H3 提示词写法，任意能读本地 skill 文件的 Agent 可用。
+  不依赖 MiniMax Hub 画布、hub_* 工具或专有运行时（与官方 Hub 原生成片版不同）。
 ---
 
 # 纸艺定格科普 · 提示词写法

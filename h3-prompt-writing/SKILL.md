@@ -3,6 +3,9 @@ name: h3-prompt-writing
 description: |
   MiniMax H3 分镜/视频提示词底座：将需求改写为 T2VA、I2VA、FL2VA、L2VA、Ref2VA 结构化终稿。
   含字段规范、关键帧对齐、参考标签、两级时间轴与状态账本。写任意 H3 提示词、多参考连续分镜、精确物理交接时使用。
+compatibility: |
+  可移植：任意能读本地文件的 Agent 均可使用；不依赖外部 API、MiniMax Hub 工具或专有运行时。
+  agents/openai.yaml 仅为可选 ChatGPT/Codex UI 元数据，不限制只能用于 OpenAI Agent。
 ---
 
 # H3 提示词写作（底座）
@@ -186,6 +189,13 @@ non_diegetic_music:
 
 ---
 
+## 效果提示（官方同步）
+
+- 描述总时长必须对齐请求片长（4–15 秒）  
+- 参考标签全程一致（如 `<Picture 1>`、`<Video 1>`、`<Audio 1>`）  
+- 少用「电影感」「好看」等空词，多写具体视听细节  
+- I2VA / FL2VA / L2VA：写清首帧和/或尾帧如何接到时间线  
+
 ## 终稿自检
 
 - [ ] 模式与指令行正确  
@@ -198,4 +208,4 @@ non_diegetic_music:
 | 参考 | 内容 |
 |---|---|
 | `base-zh.txt` / `ref-zh.txt` | 中文指南 + 英文范例 |
-| `base-en.txt` / `ref-en.txt` | 官方英文原版 |
+| `base-en.txt` / `ref-en.txt` | 官方英文原版（与上游一致） |

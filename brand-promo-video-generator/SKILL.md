@@ -3,6 +3,9 @@ name: brand-promo-video-generator
 description: |
   品牌/产品宣传短片的 H3 提示词写法：品牌事实、叙事脊柱、精确节拍，输出可分段投喂 MiniMax H3 的 prompt。
   适用发布/官网/社媒宣传提示词。不适用无授权仿标识、虚构卖点长剧本。
+compatibility: |
+  可移植：聚焦 H3 提示词写法，任意能读本地 skill 文件的 Agent 可用。
+  不依赖 MiniMax Hub 画布、hub_* 工具或专有运行时（与官方 Hub 原生成片版不同）。
 ---
 
 # 品牌宣传 · 提示词写法

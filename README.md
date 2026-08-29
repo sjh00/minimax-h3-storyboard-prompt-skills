@@ -6,6 +6,14 @@
 仓库名即定位：`minimax-h3-storyboard-prompt-skills`  
 上游题材参考：[官方 skills](https://github.com/MiniMax-AI/MiniMax-H3/tree/main/skills)（本仓全部中文化，并压成「写法」而非「成片工程」）。
 
+**相对官方的差异（刻意保留）：**
+
+| 官方 | 本仓 |
+|---|---|
+| 8 个风格 skill 标注需 MiniMax Hub | 全部可移植，只写 H3 提示词 |
+| `music-video-subtitle-generator` | 同名目录（已与官方对齐） |
+| `h3-prompt-writing` 英文 + Tips | 中文底座 + 融合分镜规划 + 同步效果 Tips |
+
 ---
 
 ## 怎么用这套技能
@@ -34,6 +42,7 @@
 npx skills add https://github.com/sjh00/minimax-h3-storyboard-prompt-skills --list
 npx skills add https://github.com/sjh00/minimax-h3-storyboard-prompt-skills --skill '*'
 npx skills add https://github.com/sjh00/minimax-h3-storyboard-prompt-skills --skill h3-prompt-writing
+npx skills add https://github.com/sjh00/minimax-h3-storyboard-prompt-skills --skill music-video-subtitle-generator
 ```
 
 ---
@@ -55,7 +64,7 @@ npx skills add https://github.com/sjh00/minimax-h3-storyboard-prompt-skills --sk
 | [`3d-animation-short-generator`](3d-animation-short-generator/) | 风格化 3D 动画 | 镜头表/每秒指令 → 逐镜 H3 prompt |
 | [`papercraft-stop-motion-explainer`](papercraft-stop-motion-explainer/) | 纸艺定格科普 | 画风锁 + 分镜 → 图/视频 prompt |
 | [`paper-collage-explainer-generator`](paper-collage-explainer-generator/) | 半调纸拼贴 | 静帧规格 + 停格组装 prompt |
-| [`mv-subtitle-skill-confirmed`](mv-subtitle-skill-confirmed/) | 歌词空间贴字 MV | 多镜脚本（Vocal/Typography/Visual） |
+| [`music-video-subtitle-generator`](music-video-subtitle-generator/) | 歌词空间贴字 MV | 多镜脚本（Vocal/Typography/Visual） |
 | [`co-op-game-intro-generator`](co-op-game-intro-generator/) | 双人游戏菜单开场 | 确认图 prompt + 15s 时间轴视频 prompt |
 | [`handdrawn-live-video-generator`](handdrawn-live-video-generator/) | 手绘×实拍 | 用户语言 15s 一体 prompt |
 
@@ -83,7 +92,7 @@ minimax-h3-storyboard-prompt-skills/
 ├── 3d-animation-short-generator/
 ├── papercraft-stop-motion-explainer/
 ├── paper-collage-explainer-generator/
-├── mv-subtitle-skill-confirmed/
+├── music-video-subtitle-generator/
 ├── co-op-game-intro-generator/
 └── handdrawn-live-video-generator/
 ```

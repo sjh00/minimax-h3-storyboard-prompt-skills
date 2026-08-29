@@ -3,6 +3,9 @@ name: music-video-subtitle-generator
 description: |
   歌词空间贴字 MV 的 H3 提示词写法：节拍与歌词锁定、人物/场景/文字三卡分工、多分镜 Vocal/Typography/Visual 脚本。
   适用风格化 MV 提示词。不适用普通字幕烧录说明。
+compatibility: |
+  可移植：聚焦 H3 提示词写法，任意能读本地 skill 文件的 Agent 可用。
+  不依赖 MiniMax Hub 画布、hub_* 工具或专有运行时（与官方 Hub 原生成片版不同）。
 ---
 
 # 音乐 MV 贴字 · 提示词写法

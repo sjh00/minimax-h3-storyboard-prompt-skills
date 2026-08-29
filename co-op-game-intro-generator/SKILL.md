@@ -3,6 +3,9 @@ name: co-op-game-intro-generator
 description: |
   双人合作游戏主菜单/开场的 H3 提示词写法：风格与身份锁、确认首图 prompt、15s 菜单交互时间轴视频 prompt。
   适用游戏概念展示提示词。不适用可玩工程或复杂多页 UI 规格书。
+compatibility: |
+  可移植：聚焦 H3 提示词写法，任意能读本地 skill 文件的 Agent 可用。
+  不依赖 MiniMax Hub 画布、hub_* 工具或专有运行时（与官方 Hub 原生成片版不同）。
 ---
 
 # 双人游戏开场 · 提示词写法

@@ -3,6 +3,9 @@ name: handdrawn-live-video-generator
 description: |
   手绘发光动画与实拍融合的 15 秒 H3 提示词写法：真实接触、连续变形、慢半拍追拍，按用户语言输出一体 prompt。
   适用单场景创意片提示词。不适用精致 CG/恐怖跳吓/多场景硬剪说明。
+compatibility: |
+  可移植：聚焦 H3 提示词写法，任意能读本地 skill 文件的 Agent 可用。
+  不依赖 MiniMax Hub 画布、hub_* 工具或专有运行时（与官方 Hub 原生成片版不同）。
 ---
 
 # 手绘×实拍 · 提示词写法
